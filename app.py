@@ -11,7 +11,7 @@ import sys
 try:
     import tensorflow as tf
 except ImportError:
-    subprocess.check_call([sys.executable, "-m", "pip", "install", "tensorflow==2.12.0"])
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "tensorflow==2.15.0"])
     import tensorflow as tf
 
 model=tf.keras.models.load_model('model.keras')
