@@ -4,6 +4,16 @@ import numpy as np
 from sklearn.preprocessing import StandardScaler,LabelEncoder,OneHotEncoder
 import tensorflow as tf
 import pickle
+import os
+import subprocess
+import sys
+
+# Install tensorflow manually if not already installed
+try:
+    import tensorflow as tf
+except ImportError:
+    subprocess.check_call([sys.executable, "-m", "pip", "install", "tensorflow==2.12.0"])
+    import tensorflow as tf
 
 model=tf.keras.models.load_model('model.keras')
 with open('label_encoder_gender.pkl','rb') as file:
